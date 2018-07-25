@@ -9,8 +9,13 @@ from influxdb import InfluxDBClient
 from influxdb import SeriesHelper
 
 
+influxip='127.0.0.1'
+influxport=8086
+username='root'
+password='root'
+database_name='data'
 
-db = influxdb.InfluxDBClient('127.0.0.1',8086,'reda','root','data')
+db = influxdb.InfluxDBClient(influxip,influxport,username,password,database_name)
 
 
 class MySeriesHelper(SeriesHelper):
@@ -50,6 +55,11 @@ data={}
 def to_timestamp(datestring):
     return time.mktime(datetime.datetime.strptime(datestring, "%Y-%m-%d %H:%M:%S").timetuple())
 
+#you need to download dataset from https://nesg.ugr.es/nesg-ugr16/august.php#INI
+#unzip it and run this script
+#this script is for the first week , you will have to change the name of the file bellow
+#so you can use it with the other weeks
+#with open('august.week*.csv', newline='') as csvfile:
 with open('august.week1.csv', newline='') as csvfile:
         reader = csv.reader(csvfile)
 

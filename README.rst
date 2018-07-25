@@ -1,8 +1,10 @@
-# clustering netflows from influx
+clustering netflows from influx:
+########################################
 
 this repository contains a notebook and a script to insert data to influx db and than analyze its pattern using the notebook script
 
-## How to use
+How to use:
+=============
 
 clone repository :
 
